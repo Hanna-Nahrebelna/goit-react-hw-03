@@ -8,14 +8,22 @@ export default function Contact({
   contact: { name, number }
 }) {
   return (
-    <div className={css.contactList}>
-      <span className={css.contactItem}><IoPerson size="24" /></span>
-      <p className={css.contactText}>{name}</p>
+    <div className={css.container}>
+      <ul className={css.contactList}>
+        <span className={css.contactSpan}>
+          <li className={css.contactItem}><IoPerson size="20" /></li>
+          <li><p className={css.contactText}>{name}</p></li>
+        </span>
+        <span className={css.contactSpan}>
+          <li className={css.contactItem}><FaPhone size="20" /></li>
+          <li><p className={css.contactText}>{number}</p></li>
+        </span>        
+      </ul>
       
-      <span className={css.contactItem}><FaPhone size="24" /></span>
-      <p className={css.contactText}>{number}</p>
-
-      <button>Delete</button>
+      <span className={css.contactBtnSpan}>
+        <button className={css.contactBtn}>Delete</button>
+      </span>
+     
     </div>
 
   );

@@ -1,10 +1,38 @@
+.container {
+  display: flex;
+  width: 400px;
+
+}
 
 .contactList {
+  display: inline;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;  
   margin: 0;
-  padding: 10px;
-  align-items: baseline;
+  padding: 0;
+  width: 200px;
+}
+
+.contactSpan {
+  display: flex;
+  list-style: none;     
+  margin: 0;
+  padding: 0;
+  width: 200px;  
+}
+
+.contactItem,
+.contactText {  
+  margin: 0;  
+} 
+
+.contactBtnSpan {
+  display: inline-flex;
+  width: 150px;
+  justify-content: center;
+}
+
+.css.contactBtn {  
+  display: block;
+  width: 80px;
 }
 
