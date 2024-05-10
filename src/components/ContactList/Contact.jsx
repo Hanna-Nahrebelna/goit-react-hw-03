@@ -5,8 +5,7 @@ import css from './ContactList.module.css'
 
 
 export default function Contact({
-  contact: { name, number }
-}) {
+  contact: { id, name, number }, onDelete}) {
   return (
     <div className={css.container}>
       <ul className={css.contactList}>
@@ -21,7 +20,7 @@ export default function Contact({
       </ul>
       
       <span className={css.contactBtnSpan}>
-        <button className={css.contactBtn}>Delete</button>
+        <button className={css.contactBtn} onClick={() => onDelete(id)}>Delete</button>
       </span>
      
     </div>
