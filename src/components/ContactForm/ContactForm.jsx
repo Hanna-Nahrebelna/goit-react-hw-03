@@ -31,12 +31,12 @@ const ContactForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}>
       <Form className={css.form}>
-        <label htmlFor={nameFieldId}>Name</label>
+        <label className={css.label} htmlFor={nameFieldId}>Name</label>
         <Field className={css.field} type="text" name="username" />
-        <ErrorMessage className={css.error} name="username" component="span" />
+        <ErrorMessage className={css.errorName} name="username" component="span" />
         <label htmlFor={numberFieldId}>Number</label>
         <Field className={css.field} type="text" name="number" />
-        <ErrorMessage className={css.error} name="number" component="span" />
+        <ErrorMessage className={css.errorNumber} name="number" component="span" />
         <button className={css.btn} type="submit">Add contact</button>
       </Form>
     </Formik>

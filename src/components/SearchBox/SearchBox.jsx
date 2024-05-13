@@ -3,8 +3,8 @@ import css from './SearchBox.module.css'
 const SearchBox = ({value, onFilter}) => {
 
   return (
-    <div>
-      <p>Finde contacts by name</p>
+    <div className={css.searchBox}>
+      <p className={css.searchTitle}>Finde contacts by name</p>
       <input
         type="search"
         className={css.searchInput}

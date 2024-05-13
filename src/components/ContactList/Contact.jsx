@@ -20,7 +20,7 @@ export default function Contact({
       </ul>
       
       <span className={css.contactBtnSpan}>
-        <button className={css.contactBtn} onClick={() => onDelete(id)}>Delete</button>
+        <button className={css.contactBtn} onClick={() => onDelete()}>Delete</button>
       </span>
      
     </div>
