@@ -6,22 +6,21 @@ import css from './ContactForm.module.css'
 
 
 const ContactSchema = Yup.object().shape({
-  username: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
+  name: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
   number: Yup.string().min(5, "Too Short!").max(13, "Too Long!").required("Required")
 });
 
-const initialValues= {
-      username: "",
-      number: ""
+const initialValues = {      
+    name: "",
+    number: ""
 }
 
-const ContactForm = () => {
-    
+const ContactForm = ({onAdd}) => {    
   const nameFieldId = useId();
   const numberFieldId = useId();
 
-  const handleSubmit = (values, actions) => {
-    console.log(values);
+  const handleSubmit = (values, actions) => {    
+    onAdd(values);    
     actions.resetForm();
   }
 
@@ -31,11 +30,11 @@ const ContactForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}>
       <Form className={css.form}>
-        <label className={css.label} htmlFor={nameFieldId}>Name</label>
-        <Field className={css.field} type="text" name="username" />
-        <ErrorMessage className={css.errorName} name="username" component="span" />
-        <label htmlFor={numberFieldId}>Number</label>
-        <Field className={css.field} type="text" name="number" />
+        <label className={css.label} htmlFor={`${nameFieldId}-username`}>Name</label>
+        <Field className={css.field} id={`${nameFieldId}-username`} type="text" name="name" />
+        <ErrorMessage className={css.errorName} name="name" component="span" />
+        <label htmlFor={`${numberFieldId}-usernumber`}>Number</label>
+        <Field className={css.field} id={`${numberFieldId}-usernumber`} type="text" name="number" />
         <ErrorMessage className={css.errorNumber} name="number" component="span" />
         <button className={css.btn} type="submit">Add contact</button>
       </Form>
