@@ -11,7 +11,11 @@ import css from "./App.module.css"
 
 
 export default function App() {  
-  const [contactCards, setContactCards] = useState(contacts);
+  const [contactCards, setContactCards] = useState(() => {
+    const savedContacts = window.localStorage.getItem("saved-new-contact");
+    return savedContacts ? JSON.parse(savedContacts) : contacts;
+  });
+
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
